@@ -1,0 +1,292 @@
+// Custom color variables
+$primary-color: #2c3e50;
+$accent-color: #e74c3c;
+$light-color: #ecf0f1;
+$dark-color: #2c3e50;
+$gray-color: #95a5a6;
+$gradient-start: #2c3e50;
+$gradient-end: #1a252f;
+
+// General styling
+.restaurant-page {
+  min-height: 100vh;
+  background-color: #f5f7fa;
+  font-family: 'Roboto', sans-serif;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: $gray-color;
+}
+
+.error-card {
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #fadbd8;
+  border-left: 4px solid $accent-color;
+  
+  mat-card-content {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    
+    mat-icon {
+      font-size: 2rem;
+      height: 2rem;
+      width: 2rem;
+      margin-right: 1rem;
+    }
+    
+    p {
+      margin: 0;
+      font-size: 1rem;
+    }
+  }
+}
+
+// Header styling
+.restaurant-header {
+  position: relative;
+  height: 300px;
+  background-image: linear-gradient(to right, $gradient-start, $gradient-end);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  
+  .backdrop-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+  }
+  
+  .header-content {
+    position: relative;
+    padding: 2rem;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .restaurant-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  .restaurant-address {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.9);
+    
+    mat-icon {
+      font-size: 1.2rem;
+      height: 1.2rem;
+      width: 1.2rem;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+// Content styling
+.content-wrapper {
+  padding: 2rem 1rem;
+  margin-top: -2rem;
+  position: relative;
+  z-index: 2;
+  
+  @media (min-width: 768px) {
+    padding: 2rem;
+  }
+}
+
+.info-card {
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+  }
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: $primary-color;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid $accent-color;
+  display: inline-block;
+}
+
+// Description card
+.description-card {
+  .description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: $dark-color;
+    margin: 0;
+  }
+}
+
+// Map styling
+.map-container {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f5f7fa;
+  
+  .google-map {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  .no-map-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $gray-color;
+    background-color: #f8f9fa;
+    border: 1px dashed $gray-color;
+    
+    mat-icon {
+      font-size: 3rem;
+      height: 3rem;
+      width: 3rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+// Location details
+.location-details {
+  .detail-row {
+    display: flex;
+    margin-bottom: 1rem;
+    align-items: flex-start;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    mat-icon {
+      color: $accent-color;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+    
+    strong {
+      color: $primary-color;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+// Contact card
+.contact-card {
+  .contact-item {
+    display: flex;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    align-items: flex-start;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    mat-icon {
+      color: $accent-color;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+    
+    .contact-content {
+      h3 {
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 0 0 0.5rem 0;
+        color: $primary-color;
+      }
+      
+      a {
+        color: $accent-color;
+        text-decoration: none;
+        word-break: break-all;
+        transition: color 0.2s ease;
+        
+        &:hover {
+          color: darken($accent-color, 10%);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  
+  .no-contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    color: $gray-color;
+    text-align: center;
+    
+    mat-icon {
+      font-size: 2.5rem;
+      height: 2.5rem;
+      width: 2.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+// ID card
+.id-card {
+  .identifier-value {
+    font-family: 'Courier New', monospace;
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    word-break: break-all;
+    margin-top: 0.5rem;
+    border: 1px solid #e9ecef;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 767px) {
+  .restaurant-header {
+    height: 200px;
+    
+    .restaurant-name {
+      font-size: 1.8rem;
+    }
+  }
+  
+  .section-title {
+    font-size: 1.3rem;
+  }
+  
+  .map-container {
+    height: 200px;
+  }
+}
