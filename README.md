@@ -1,27 +1,57 @@
-# GraphQlTestFront
+# GraphQL Test Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+This project is a local frontend application designed to test and interact with a GraphQL API using Apollo. It provides a user-friendly interface to query and visualize data from the API for internal testing purposes.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Query GraphQL APIs with ease.
+- Display results in a structured and readable format.
+- Support for custom queries and variables.
 
-## Code scaffolding
+## Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [Node.js](https://nodejs.org/) (version 14 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository:
+    ```bash
+    git clone /path/to/your/local/repository
+    cd graph_ql_test_front
+    ```
 
-## Running unit tests
+2. Install dependencies:
+    ```bash
+    pnpm install
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Usage
 
-## Running end-to-end tests
+1. Start the development server:
+    ```bash
+    pnpm start
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Open your browser and navigate to `http://localhost:3000`.
 
-## Further help
+3. Enter your GraphQL endpoint and start testing queries.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Scripts
+
+- `pnpm start`: Start the development server.
+- `pnpm run build`: Build the project for production.
+- `pnpm test`: Run tests.
+
+## Contributing
+
+This is an internal project. Contributions should follow company guidelines and be reviewed before merging.
+
+## License
+
+This project is for internal use only and is not licensed for public distribution.
+
+## Acknowledgments
+
+- [GraphQL](https://graphql.org/)
+- [Apollo](https://www.apollographql.com/)
