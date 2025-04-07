@@ -1,0 +1,111 @@
+<div class="reviews-table-container">
+    <div class="info-tooltip">
+      <mat-icon class="info-icon">info_outline</mat-icon>
+      <span class="tooltip-text">Google no recopila reviews de comida, servicio, ambiente y calidad.</span>
+    </div>
+    
+    <table class="reviews-table">
+      <thead>
+        <tr>
+          <th>Reviews por site</th>
+          <th>Google</th>
+          <th>TripAdvisor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rating Row -->
+        <tr>
+          <td class="column-title">Rating</td>
+          <td>
+            {{ reviewsData.ratings.Google.rating }}
+            <span class="star-rating">{{ getStarRating(reviewsData.ratings.Google.rating) }}</span>
+          </td>
+          <td>
+            {{ reviewsData.ratings.TripAdvisor.rating }}
+            <span class="star-rating">{{ getStarRating(reviewsData.ratings.TripAdvisor.rating) }}</span>
+          </td>
+        </tr>
+  
+        <!-- Reviews totales Row (Expandable) -->
+        <tr class="expandable-row" (click)="toggleReviews()">
+          <td class="reviews-toggle column-title">
+            Reviews totales
+            <mat-icon class="expand-icon">{{ reviewsExpanded ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}</mat-icon>
+          </td>
+          <td>{{ reviewsData.ratings.Google.reviews_total }}</td>
+          <td>{{ reviewsData.ratings.TripAdvisor.reviews_total }}</td>
+        </tr>
+  
+        <!-- Expanded Reviews Details -->
+        <ng-container *ngIf="reviewsExpanded">
+          <tr class="expanded-row">
+            <td>Reviews con 5 estrellas</td>
+            <td>{{ reviewsData.ratings.Google.reviews['5_stars'] }}</td>
+            <td>{{ reviewsData.ratings.TripAdvisor.reviews['5_stars'] }}</td>
+          </tr>
+          <tr class="expanded-row">
+            <td>Reviews con 4 estrellas</td>
+            <td>{{ reviewsData.ratings.Google.reviews['4_stars'] }}</td>
+            <td>{{ reviewsData.ratings.TripAdvisor.reviews['4_stars'] }}</td>
+          </tr>
+          <tr class="expanded-row">
+            <td>Reviews con 3 estrellas</td>
+            <td>{{ reviewsData.ratings.Google.reviews['3_stars'] }}</td>
+            <td>{{ reviewsData.ratings.TripAdvisor.reviews['3_stars'] }}</td>
+          </tr>
+          <tr class="expanded-row">
+            <td>Reviews con 2 estrellas</td>
+            <td>{{ reviewsData.ratings.Google.reviews['2_stars'] }}</td>
+            <td>{{ reviewsData.ratings.TripAdvisor.reviews['2_stars'] }}</td>
+          </tr>
+          <tr class="expanded-row">
+            <td>Reviews con 1 estrellas</td>
+            <td>{{ reviewsData.ratings.Google.reviews['1_star'] }}</td>
+            <td>{{ reviewsData.ratings.TripAdvisor.reviews['1_star'] }}</td>
+          </tr>
+        </ng-container>
+  
+        <!-- Reviews mensuales -->
+        <tr>
+          <td class="column-title">Reviews mensuales</td>
+          <td>{{ reviewsData.ratings.Google.monthly_reviews }}</td>
+          <td>{{ reviewsData.ratings.TripAdvisor.monthly_reviews }}</td>
+        </tr>
+  
+        <!-- Food/Service/Environment/Quality -->
+        <tr>
+          <td class="column-title">Comida</td>
+          <td>Dato no recopilado</td>
+          <td>{{ reviewsData.ratings.TripAdvisor.aspects.food }}</td>
+        </tr>
+        <tr>
+          <td class="column-title">Servicio</td>
+          <td>Dato no recopilado</td>
+          <td>{{ reviewsData.ratings.TripAdvisor.aspects.service }}</td>
+        </tr>
+        <tr>
+          <td class="column-title">Ambiente</td>
+          <td>Dato no recopilado</td>
+          <td>{{ reviewsData.ratings.TripAdvisor.aspects.environment }}</td>
+        </tr>
+        <tr>
+          <td class="column-title">Calidad</td>
+          <td>Dato no recopilado</td>
+          <td>{{ reviewsData.ratings.TripAdvisor.aspects.quality }}</td>
+        </tr>
+  
+        <!-- Images -->
+        <tr>
+          <td>Imágenes</td>
+          <td>
+            {{ reviewsData.ratings.Google.images }}
+            <a href="javascript:void(0)" class="view-images">Ver imágenes</a>
+          </td>
+          <td>
+            {{ reviewsData.ratings.TripAdvisor.images }}
+            <a href="javascript:void(0)" class="view-images">Ver imágenes</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

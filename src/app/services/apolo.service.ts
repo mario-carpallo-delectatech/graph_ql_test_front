@@ -8,7 +8,7 @@ import { GET_FULL_RESTAURANT } from '../graphql/queries';
 export class ApoloService {
     constructor(private apollo: Apollo) {}
 
-    bearerAuth = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBkZWxlY3RhdGVjaC5jb20iLCJleHAiOjE3NDM3NzUwNjl9.15aH2Gy_z5HoCS_NjOcXKaYaADKICtZ6yIjscb9mn1s'
+    bearerAuth = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBkZWxlY3RhdGVjaC5jb20iLCJleHAiOjE3NDQwMTAxOTh9.kRbuMdmAu0hR3Dy0oR5_OaEKHl3gFxR1NslLvKxP0rg'
     
     getFullRestaurant(uid: string): Observable<any> {
       return this.apollo.query({
